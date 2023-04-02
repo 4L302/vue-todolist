@@ -43,8 +43,8 @@ createApp({
             }
             if (this.ingredient != '') this.spesaList.push(newIngredient)
         },
-        removeItem() {
-            this.spesaList.splice(index, 1)
+        removeItem(i) {
+            this.spesaList.splice(i, 1);
         },
         completeAction(index) {
             this.spesaList[index].completed = true
