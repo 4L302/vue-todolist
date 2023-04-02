@@ -15,6 +15,7 @@ Bonus:
 1- oltre al click sul pulsante, intercettare anche il tasto ENTER per aggiungere il todo alla lista
 2- cliccando sul testo dell'item, invertire il valore della proprietà done del todo corrispondente (se done era uguale a false, impostare true e viceversa)
 */
+
 const { createApp } = Vue;
 
 createApp({
@@ -27,6 +28,10 @@ createApp({
                         completed: false
                     },
                     {
+                        name: 'latte',
+                        completed: true
+                    },
+                    {
                         name: 'acqua',
                         completed: false
                     }
@@ -36,13 +41,16 @@ createApp({
         }
     },
     methods: {
+        //aggiunge item alla lista
         newItem() {
             const newIngredient = {
                 name: this.ingredient,
                 completed: false
             }
             if (this.ingredient != '') this.spesaList.push(newIngredient)
+
         },
+        //rimuove item dalla lista 
         removeItem(i) {
             this.spesaList.splice(i, 1);
         },
@@ -50,7 +58,7 @@ createApp({
             this.spesaList[index].completed = true
         }
     },
-    mounted(){
+    mounted() {
 
     }
 

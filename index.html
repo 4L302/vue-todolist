@@ -22,9 +22,8 @@
 
             <div class="todoList-container">
                 <ul v-if="spesaList.length > 0">
-                    <li v-for="(item, index) in spesaList" @click="completedAction(index)"
-                        :class="item.completed && 'alert alert-success'">
-                        <span>{{item.name.toUpperCase()}}</span>
+                    <li v-for="(item, index) in spesaList" :key="index">
+                        <span class="px-2" :class="{'completed': item.completed}">{{item.name.toUpperCase()}}</span>
                         <button class="btn btn-danger" @click.stop="removeItem(index)">X</button>
                     </li>
                 </ul>
